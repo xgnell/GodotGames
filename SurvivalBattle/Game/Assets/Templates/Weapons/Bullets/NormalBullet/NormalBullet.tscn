@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Objects/Weapons/Bullet/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Templates/Effects/BulletExplosion/BulletExplosion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Bullets/Bullet.png" type="Texture" id=3]
+
+[node name="NormalBullet" index="0" instance=ExtResource( 1 )]
+moveSpeed = 1200
+ExplosionEffect = ExtResource( 2 )
+
+[node name="Shape" parent="." index="0"]
+light_mask = 0
+material = null
+texture = ExtResource( 3 )
+
+[node name="NotifierScreenExit" parent="." index="2"]
+position = Vector2( 0, 0.236668 )
+scale = Vector2( 1, 0.408328 )

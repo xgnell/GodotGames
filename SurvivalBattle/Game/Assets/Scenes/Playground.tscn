@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Scripts/Playground.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Objects/GUIs/DisplayValues/DisplayValues.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Objects/GUIs/DisplayGameOver/DisplayGameOver.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Objects/SoundSystem/SoundSystem.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Templates/Maps/SimpleGround/SimpleGround.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Templates/Characters/Player/Player.tscn" type="PackedScene" id=6]
+
+[node name="Playground" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="DisplaySystem" parent="." instance=ExtResource( 2 )]
+
+[node name="DisplayGameOver" parent="." instance=ExtResource( 3 )]
+
+[node name="SoundSystem" parent="." instance=ExtResource( 4 )]
+
+[node name="startGameTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="WorldCamera" type="Camera2D" parent="."]
+visible = false
+zoom = Vector2( 3, 3 )
+
+[node name="Map" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 513.977, 287.31 )
+
+[node name="Nightmare" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0, 0, 0, 1 )
+[connection signal="timeout" from="startGameTimer" to="." method="_on_startGameTimer_timeout"]

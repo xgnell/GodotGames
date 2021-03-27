@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Scripts/Menu.gd" type="Script" id=1]
+
+[node name="Start Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -83.6852
+margin_top = -2.78952
+margin_right = -133.685
+margin_bottom = -52.7896
+script = ExtResource( 1 )
+
+[node name="lblTitle" type="Label" parent="."]
+margin_left = 391.499
+margin_top = 56.0607
+margin_right = 467.499
+margin_bottom = 70.0607
+rect_scale = Vector2( 3, 3 )
+size_flags_stretch_ratio = 0.0
+text = "FIRST GAME"
+
+[node name="buttonPlay" type="Button" parent="."]
+margin_left = 444.404
+margin_top = 133.737
+margin_right = 482.404
+margin_bottom = 153.737
+rect_scale = Vector2( 3, 3 )
+text = "Play"
+
+[node name="buttonAbout" type="Button" parent="."]
+margin_left = 426.543
+margin_top = 242.684
+margin_right = 476.543
+margin_bottom = 262.684
+rect_scale = Vector2( 3, 3 )
+text = "About"
+
+[node name="buttonExit" type="Button" parent="."]
+margin_left = 445.642
+margin_top = 346.456
+margin_right = 480.642
+margin_bottom = 366.456
+rect_scale = Vector2( 3, 3 )
+text = "Exit"
+[connection signal="pressed" from="buttonPlay" to="." method="_on_buttonPlay_pressed"]
+[connection signal="pressed" from="buttonExit" to="." method="_on_buttonExit_pressed"]

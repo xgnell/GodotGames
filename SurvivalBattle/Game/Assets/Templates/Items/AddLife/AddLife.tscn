@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Objects/Item/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Templates/Items/AddLife/AddLife.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/Items/ItemAddLife.png" type="Texture" id=3]
+
+[node name="AddLife" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )

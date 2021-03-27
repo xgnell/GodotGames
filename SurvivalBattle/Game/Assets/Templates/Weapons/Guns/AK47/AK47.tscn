@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Objects/Weapons/Gun/Gun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Templates/Weapons/Bullets/NormalBullet/NormalBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Guns/AK47.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.9787, 10 )
+
+[node name="AK47" instance=ExtResource( 1 )]
+attackRate = 0.1
+weaponRange = 700
+addBulletForce = 1500
+fireDamage = 20
+bulletsPerShot = 1
+maxBullets = 300
+BulletType = ExtResource( 2 )
+
+[node name="Shape" parent="." index="0"]
+position = Vector2( 20.0171, 1.3176 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+
+[node name="AttackPosition" parent="." index="1"]
+position = Vector2( 86.4299, -5.06016 )
+
+[node name="PickArea" type="Area2D" parent="." index="2"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickArea" index="0"]
+position = Vector2( -5.73578, 0.71698 )
+shape = SubResource( 1 )

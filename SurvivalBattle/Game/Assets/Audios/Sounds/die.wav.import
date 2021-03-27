@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/die.wav-59e18dcf922cbbdfa4f2c46cb8523402.sample"
+
+[deps]
+
+source_file="res://Assets/Audios/Sounds/die.wav"
+dest_files=[ "res://.import/die.wav-59e18dcf922cbbdfa4f2c46cb8523402.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

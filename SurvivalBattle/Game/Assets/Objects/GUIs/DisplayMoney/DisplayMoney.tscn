@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Fonts/Converted/MainFontNormal.tres" type="DynamicFont" id=1]
+
+[node name="DisplayMoney" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -29.5
+margin_right = 29.5
+margin_bottom = 39.0
+
+[node name="MoneyContainer" type="HBoxContainer" parent="."]
+margin_right = 59.0
+margin_bottom = 39.0
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MoneyContainer"]
+margin_left = 18.0
+margin_right = 41.0
+margin_bottom = 39.0
+
+[node name="MoneyValue" type="Label" parent="MoneyContainer/CenterContainer"]
+margin_right = 23.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+text = "0"

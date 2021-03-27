@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Objects/Characters/Actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Templates/Characters/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Templates/Weapons/Guns/AK47/AK47.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/Converted/MainFontNormal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Sprites/Characters/Player.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Templates/Controller/Controller.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Scripts/ScreenShake.gd" type="Script" id=7]
+
+[node name="Player" index="0" instance=ExtResource( 1 )]
+collision_mask = 10
+script = ExtResource( 2 )
+life = 100
+InitWeapon = ExtResource( 3 )
+
+[node name="TagName" type="Label" parent="." index="0"]
+margin_left = -66.7044
+margin_top = -78.4125
+margin_right = 71.2956
+margin_bottom = -39.4125
+custom_fonts/font = ExtResource( 4 )
+text = "Player 1"
+align = 1
+valign = 1
+
+[node name="Avatar" parent="." index="1"]
+self_modulate = Color( 0, 0.976471, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+one_way_collision_margin = 0.0
+
+[node name="ForWeaponCollision" parent="." index="3"]
+editor/display_folded = false
+
+[node name="Controller" parent="." index="4" instance=ExtResource( 6 )]
+
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+script = ExtResource( 7 )
+
+[node name="DamageTimer" type="Timer" parent="." index="6"]
+one_shot = true
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]

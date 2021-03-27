@@ -1,0 +1,50 @@
+[gd_scene format=2]
+
+[node name="ControlUI" type="CanvasLayer"]
+
+[node name="controlAction" type="Control" parent="."]
+editor/display_folded = true
+margin_left = 654.77
+margin_top = 355.245
+margin_right = 694.77
+margin_bottom = 395.245
+
+[node name="buttonJump" type="Button" parent="controlAction"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_scale = Vector2( 2, 2 )
+text = "Jump"
+
+[node name="controlMove" type="Control" parent="."]
+editor/display_folded = true
+margin_left = 197.803
+margin_top = 406.027
+margin_right = 237.803
+margin_bottom = 446.027
+
+[node name="buttonLeft" type="Button" parent="controlMove"]
+margin_left = -145.554
+margin_top = -41.6386
+margin_right = -95.5541
+margin_bottom = 8.36139
+rect_scale = Vector2( 2, 2 )
+text = "Left"
+
+[node name="buttonRight" type="Button" parent="controlMove"]
+margin_left = 11.6913
+margin_top = -43.4248
+margin_right = 61.6913
+margin_bottom = 6.5752
+rect_scale = Vector2( 2, 2 )
+text = "Right"
+
+[node name="controlMenu" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="buttonEscape" type="Button" parent="controlMenu"]
+margin_right = 99.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "Back to Menu"

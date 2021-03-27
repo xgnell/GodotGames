@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Objects/Characters/Actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Templates/Characters/Enemy/Enemy.gd" type="Script" id=2]
+
+[node name="Enemy" instance=ExtResource( 1 )]
+collision_layer = 2
+collision_mask = 23
+script = ExtResource( 2 )
+attackTimer = 1.0
+
+[node name="attackTime" type="Timer" parent="." index="3"]
+one_shot = true
+
+[node name="attackWaitTime" type="Timer" parent="." index="4"]
+one_shot = true
+
+[node name="changeTargetTimer" type="Timer" parent="." index="5"]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="attackTime" to="." method="_on_attackTime_timeout"]
+[connection signal="timeout" from="attackWaitTime" to="." method="_on_attackWaitTime_timeout"]

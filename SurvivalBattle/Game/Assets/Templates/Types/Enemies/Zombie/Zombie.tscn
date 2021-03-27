@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Templates/Characters/Enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Templates/Weapons/Guns/Pistol/Pistol.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Characters/Player.png" type="Texture" id=3]
+
+[node name="Zombie" instance=ExtResource( 1 )]
+collision_mask = 19
+moveSpeed = 100.0
+life = 30
+InitWeapon = ExtResource( 2 )
+attackTimer = 1.5
+
+[node name="Avatar" parent="." index="0"]
+texture = ExtResource( 3 )

@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Scripts/playerController.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/characters/characters-23.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/characters/characters-29.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/characters/characters-24.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/characters/characters-25.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/characters/characters-26.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/characters/characters-30.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.3792, 5.45883 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "Sit",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 225.233, 78.3707 )
+script = ExtResource( 1 )
+
+[node name="positionRight" type="Position2D" parent="."]
+position = Vector2( 93.1691, -19.9263 )
+
+[node name="positionLeft" type="Position2D" parent="."]
+position = Vector2( -90.146, -18.9713 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.654297, 34.4676 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1.3667, -24.0154 )
+frames = SubResource( 2 )
+animation = "Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 4.31219, -50.8246 )
+current = true

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/moveSlash.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/swoosh.png" type="Texture" id=2]
+
+[node name="Slash" type="Area2D"]
+position = Vector2( -118, 321 )
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -38, -12 )
+polygon = PoolVector2Array( -5, -48, 34, -45, 66, -21, 78, 4, 78, 41, 55, 76, 10, 76, 38, 56, 49, 18, 49, -15, 31, -36 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1, -1.00002 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 170, 0, 90, 130 )
+
+[node name="notifierOutofScreen" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -3, 1.99997 )
+scale = Vector2( 4.4, 6.25 )
+[connection signal="screen_exited" from="notifierOutofScreen" to="." method="_on_notifierOutofScreen_screen_exited"]
